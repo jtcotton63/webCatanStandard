@@ -246,7 +246,7 @@ catan.models.Map = (function mapNameSpace(){
 
       // if there is no settlement within two vertices
       var edges = loc.location.getConnectedEdges();
-      var occupied = false;
+      var canPlace = true;
       for (var eKey in edges) {
 
         var edge = edges[eKey];
@@ -254,7 +254,7 @@ catan.models.Map = (function mapNameSpace(){
             new catan.models.hexgrid.HexLocation(edge.x, edge.y));
 
         if (originHex && originHex.edges[edge.direction].ownerID == id) {
-          occupied = true;
+          canPlace = true;
         }
         var vertexes = edge.getConnected();
         for (var vKey in vertexes) {
@@ -268,7 +268,7 @@ catan.models.Map = (function mapNameSpace(){
           }
         }
       }
-      return occupied;
+      return canPlace;
     };
 
     Map.prototype.setupCanPlaceSettlement = function(loc, id) {

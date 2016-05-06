@@ -49,7 +49,7 @@ catan.setup.Controller = (function Setup_Class(){
 	function SetupRoundController(clientModel, mapController) {
 			Controller.call(this,undefined,clientModel);
 			this.setMapController(mapController);
-			this.setState(new catan.setup.PlaceRoad(this));
+			this.setState(new catan.setup.PlaceSettlement(this));
 			this.updateFromModel();
 	}
 	SetupRoundController.prototype.changeState = function(state) {
