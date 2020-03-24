@@ -6,7 +6,7 @@ This is a web game that allows four players to play the Settlers of Catan game.
 
 #### Oracle JDK 8
 
-Oracle JDK 8 must be installed. This will *not* work with any later version or any other JDK implementation. To install it:
+Oracle JDK 8 must be installed. This will *not* work with any other version or any other JDK implementation. To install it:
 
 * Log into ```oracle.com```.
 
@@ -29,7 +29,24 @@ export PATH="$PATH:$JAVA_HOME/bin"
 
 * ```$ sudo ln -s /opt/java8/jdk1.8.0_241/bin/java /usr/bin/java```
 
+#### Ant
 
+Ant must also be installed.
+
+* Download ant as a .tar.gz file.
+
+* ```$ cd ~/Downloads```
+
+* ```$ sudo sudo mkdir -p /opt/ant```
+
+* ```$ sudo tar xzvf apache-ant-1.10.7-bin.tar.gz -C /opt/ant/```
+
+* Add the following lines to your ```.bashrc```:
+
+```
+export ANT_HOME="/opt/ant/apache-ant-1.10.7"
+export PATH="$PATH:$ANT_HOME/bin"
+```
 
 ## To Run the Server
 
